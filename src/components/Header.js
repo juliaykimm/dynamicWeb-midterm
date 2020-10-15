@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="Header">
+    <header>
       <div>
         <h1>Studio Ghibli Films</h1>
       </div>

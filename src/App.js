@@ -1,17 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Home from "./container/Home";
 import SGdata from "./container/SGdata";
 import "./App.css";
 
-import Home from "./container/Home";
 import Header from "./components/Header";
 
 function App() {
   console.log("are u here?");
   return (
-    <>
-      <Home />
-      <Header />
-    </>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
