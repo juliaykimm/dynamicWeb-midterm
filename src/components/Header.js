@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="Header">
       <div>
-        <h1>Miyazaki Films</h1>
+        <h1>Studio Ghibli Films</h1>
       </div>
     </header>
   );
