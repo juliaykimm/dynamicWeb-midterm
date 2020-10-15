@@ -9,8 +9,13 @@ function Header() {
   return (
     <header>
       <div>
-        <h1>Studio Ghibli Films</h1>
-        <p>{SGData.title}</p>
+        <nav>
+          <a href="">My Neighbor Totoro</a>
+          <a href="">Kiki's Delivery Service</a>
+          <a href="">Spirited Away</a>
+          <a href="/?title=Ponyo">Ponyo</a>
+          <a href="">Princess Mononoke</a>
+        </nav>
       </div>
     </header>
   );
