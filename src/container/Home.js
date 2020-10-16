@@ -1,49 +1,55 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import SGdata from "./SGdata";
+
 import Header from "../components/Header";
-const NounDataKey = `1a87155ce08a419caef43fe86e7b400d`;
 
 function Home() {
-  let { id } = useParams();
+  const [SGData, setSGData] = useState(null);
+  const [movie, setMovie] = useState("Ponyo");
 
-  const SGData = SGdata.find((title) => title.id === id);
-  // const [NounData, setNounData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://ghibliapi.herokuapp.com/films?q=${movie}`)
+      .then(function (response) {
+        const SGResponseData = response.data;
+        setSGData(SGResponseData);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {});
+  }, [movie]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://api.thenounproject.com`)
-  //     .then(function (response) {
-  //       const NounResponseData = response.data;
-  //       setNounData(NounResponseData);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }, []);
+  const { description, director } = useMemo(() => {
+    let description = "";
+    let director = "";
+    let title = "";
+    console.log("SGData", SGData);
+
+    if (SGData) {
+      description = `${SGData.description}`;
+      director = `${SGData.director}`;
+      title = `${SGData.title}`;
+    }
+
+    return {
+      description,
+      director,
+    };
+  }, [SGData]);
 
   return (
     <>
       <Header />
-      <div>
-        <h1>STUDIO GHIBLI FILMS</h1>
-      </div>
-
-      {/* <article>
-        {SGData.title.map((movie, i) => {
-          switch (article.type) {
-            case "p":
-              return <p key={i}>{article.data}</p>;
-            case "h2":
-              return <h2 key={i}>{article.data}</h2>;
-            case "h3":
-              return <h3 key={i}>{article.data}</h3>;
-            default:
-              return null;
-          }
-        })}
-      </article> */}
+      <header>
+        <div>
+          <h1>STUDIO GHIBLI FILMS</h1>
+          <p>name: {movie}</p>
+          <p>description: {description}</p>
+          <p>directed by: {director}</p>
+        </div>
+      </header>
     </>
   );
 }

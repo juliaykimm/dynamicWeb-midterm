@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import SGdata from "../container/SGdata";
+import Home from "../container/Home";
 
 function Header() {
   let { id } = useParams();
 
-  const SGData = SGdata.find((SGdata) => SGdata.id === id);
   return (
     <header>
       <div>
         <nav>
-          <a href="">My Neighbor Totoro</a>
-          <a href="">Kiki's Delivery Service</a>
-          <a href="">Spirited Away</a>
-          <a href="/?title=Ponyo">Ponyo</a>
-          <a href="">Princess Mononoke</a>
+          <a href="/?movie=My Neighbor Totoro">My Neighbor Totoro</a>
+          <a href="/?movie=Kiki's Delivery Service">Kiki's Delivery Service</a>
+          <a href=" /?movie=Spirited Away">Spirited Away</a>
+          <a href="/?movie=Ponyo">Ponyo</a>
+          <a href="/?movie=Princess Mononoke">Princess Mononoke</a>
         </nav>
       </div>
     </header>
