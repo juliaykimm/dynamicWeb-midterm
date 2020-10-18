@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+
+.Header nav a{
+  color: black;
+}
+
+.Header nav a:hover{
+  color: lightgreen;
+}

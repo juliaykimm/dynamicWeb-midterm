@@ -6,16 +6,19 @@ import Header from "../components/Header";
 
 function Home() {
   const [SGData, setSGData] = useState(null);
-  const [movie, setMovie] = useState("Ponyo");
+  const [movie, setMovie] = useState("");
   const withSpace = movie.replace("_", " ");
   const history = useHistory();
+  const [musicData, setMusicData] = useState("retro bass wave");
+  const [music, setMusic] = useState("");
+
   useEffect(() => {
     axios
       .get(`https://ghibliapi.herokuapp.com/films?q=${withSpace}`)
 
       .then(function (response) {
-        // const SGResponseData = response.data;
-        setSGData(response.data);
+        const SGResponseData = response.data;
+        setSGData(SGResponseData);
       })
       .catch(function (error) {
         console.log(error);
@@ -24,11 +27,35 @@ function Home() {
   }, [movie]);
 
   useEffect(() => {
+    axios
+      .get(`https://binaryjazz.us/wp-json/genrenator/v1/genre/`)
+
+      .then(function (response) {
+        const musicResponseData = response.data;
+        setMusicData(musicResponseData);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {});
+  }, [music]);
+
+  useEffect(() => {
     const searchParams = history.location.search;
     const urlParams = new URLSearchParams(searchParams);
-    const tempMovie = urlParams.get("movie");
-    if (tempMovie) {
-      setMovie(tempMovie);
+    const movie = urlParams.get("movie");
+    if (movie) {
+      setMovie(movie);
+    }
+    console.log("urlParams", urlParams);
+  }, [history]);
+
+  useEffect(() => {
+    const searchParams = history.location.search;
+    const urlParams = new URLSearchParams(searchParams);
+    const music = urlParams.get("music");
+    if (music) {
+      setMusic(music);
     }
     console.log("urlParams", urlParams);
   }, [history]);
@@ -37,7 +64,6 @@ function Home() {
     let description = "";
     let director = "";
     let title = "";
-    console.log("SGData", SGData);
 
     if (SGData) {
       description = `${SGData[0].description}`;
@@ -52,6 +78,19 @@ function Home() {
     };
   }, [SGData]);
 
+  const { genre } = useMemo(() => {
+    let genre = "";
+
+    if (SGData) {
+      console.log("musicData", musicData);
+      genre = `${musicData}`;
+    }
+
+    return {
+      genre,
+    };
+  }, [musicData]);
+
   return (
     <>
       <Header />
@@ -61,6 +100,7 @@ function Home() {
           <p>name: {title}</p>
           <p>description: {description}</p>
           <p>directed by: {director}</p>
+          <p>random genre of music: {genre}</p>
         </div>
       </header>
     </>
