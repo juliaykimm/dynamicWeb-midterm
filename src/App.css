@@ -2,11 +2,17 @@
   text-align: center;
 }
 
+.Header{
+  background-color: #74bbdb;
+  padding: 30px;
+}
 
 .Header nav a{
-  color: black;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
 }
 
 .Header nav a:hover{
-  color: lightgreen;
+  color: #6d70c9; 
 }
