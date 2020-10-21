@@ -1,10 +1,15 @@
+@font-face{
+  font-family: "Ghibli";
+  src: url("./Ghibli.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Ghibli';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./ghibliBackground.png");
+  background-size : 100% auto;
 }
 
 code {
