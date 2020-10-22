@@ -1,3 +1,7 @@
+.body{
+  background-image: url("./ghibliBackground.png");
+}
+
 .Header{
   padding: 30px;
 }
@@ -24,16 +28,53 @@
   justify-content: center;
   font-size: 50px;
   color: #211e4d;
-}
-
-.bodyTextBox{
-  color: black;
+  display: flex;
 }
 
 p{
+  color: #211e4d;
   margin-left: 100px;
   margin-right: 700px;
-  font-size: 30px;
-  
+  font-size: 20px;
+  display: flex;
+}
 
+.textBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+  background-color: #cccecf;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+@media screen and (max-width: 640px) {
+  .Header nav a{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+
+  body{
+    background-color: #b4c8d4;
+    background-image: none;
+  }
+
+  .Heading{
+    font-size: 30px;
+  }
+
+  .textBox{
+    border: 2px solid #211e4d;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  p{
+    font-size: 15px;
+  }
 }

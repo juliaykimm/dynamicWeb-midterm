@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 
 function Header() {
-  let { id } = useParams();
-
   return (
     <header className="Header">
       <div>
@@ -12,6 +9,8 @@ function Header() {
           <a href="/?movie=Ponyo">Ponyo</a>
           <a href="/?movie=My_Neighbor_Totoro">My Neighbor Totoro</a>
           <a href="/?movie=Princess_Mononoke">Princess Mononoke</a>
+          <a href="/?movie=Pom_Poko">Pom Poko</a>
+          <a href="/?movie=Arrietty">Arrietty</a>
         </nav>
       </div>
     </header>

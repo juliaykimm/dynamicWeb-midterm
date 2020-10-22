@@ -95,12 +95,14 @@ function Home() {
     <>
       <Header />
       <header>
-        <div className="bodyTextBox">
+        <div className="mainText">
           <h1 className="Heading">STUDIO GHIBLI FILMS</h1>
-          <p>NAME: {title}</p>
-          <p>DESCRIPTION: {description}</p>
-          <p>DIRECTED BY: {director}</p>
-          <p>RANDOM GENRE OF MUSIC: {genre}</p>
+          <div className="textBox">
+            <p className="textMain">NAME: {title}</p>
+            <p className="textMain">DESCRIPTION: {description}</p>
+            <p className="textMain">DIRECTED BY: {director}</p>
+            <p className="textMain">RANDOM GENRE OF MUSIC: {genre}</p>
+          </div>
         </div>
       </header>
     </>
