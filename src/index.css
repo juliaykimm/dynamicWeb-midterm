@@ -8,8 +8,8 @@ body {
   font-family: 'Ghibli';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./ghibliBackground.png");
   background-size : 100% auto;
+  background-color: #d3dbc5;
 }
 
 code {

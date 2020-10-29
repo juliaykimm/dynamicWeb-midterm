@@ -82,7 +82,6 @@ function Home() {
     let genre = "";
 
     if (SGData) {
-      console.log("musicData", musicData);
       genre = `${musicData}`;
     }
 
@@ -98,7 +97,7 @@ function Home() {
         <div className="mainText">
           <h1 className="Heading">STUDIO GHIBLI FILMS</h1>
           <div className="textBox">
-            <p className="textMain">NAME: {title}</p>
+            <p className="textMain">MOVIE: {title}</p>
             <p className="textMain">DESCRIPTION: {description}</p>
             <p className="textMain">DIRECTED BY: {director}</p>
             <p className="textMain">RANDOM GENRE OF MUSIC: {genre}</p>

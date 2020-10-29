@@ -1,7 +1,3 @@
-.body{
-  background-image: url("./ghibliBackground.png");
-}
-
 .Header{
   padding: 30px;
 }
@@ -16,11 +12,7 @@
 }
 
 .Header nav a:hover{
-  color: #919394; 
-}
-
-.Header nav a:active{
-  color: white; 
+  color: #e7ebe6; 
 }
 
 .Heading{
@@ -32,7 +24,7 @@
 }
 
 p{
-  color: #211e4d;
+  color: #e7ebe6;
   margin-left: 100px;
   margin-right: 700px;
   font-size: 20px;
@@ -45,13 +37,18 @@ p{
   margin-left: auto;
   margin-right: auto;
   max-width: 1500px;
-  background-color: #f2f4f5;
+  background-color: #667563;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
+.MovieIconImage {
+  fill: red;
+  font-size: 20px;
+}
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 800px) {
   .Header nav a{
     display: flex;
     flex-direction: column;
@@ -68,10 +65,12 @@ p{
   }
 
   .textBox{
-    border: 2px solid #211e4d;
+    background-color: #16344d;
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   p{
